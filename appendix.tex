@@ -1,2 +1,34 @@
-\section{Appendix}
-[1] - https://itsg5-ready-to-roll.eu/
+\paragraph{Appendix}
+
+\paragraph{A1. Database schema}
+\begin{verbatim}
+CREATE TABLE blackboard (
+       key SERIAL PRIMARY KEY,
+       itemid VARCHAR,
+       stationid INTEGER,
+       appid INTEGER,
+       typeid VARCHAR,
+       latitude FLOAT,
+       longitude FLOAT,
+       locationconfidence FLOAT,
+       validityduration FLOAT,
+       validityarea INTEGER --Currently unused--                                              
+);
+
+CREATE TABLE properties (
+       parent INTEGER,
+       type VARCHAR,
+       value VARCHAR,
+
+       PRIMARY KEY (parent, type),
+       FOREIGN KEY (parent) REFERENCES blackboard
+);
+\end{verbatim}
+
+\newpage
+\paragraph{A2. Log-file parser}
+\begin{verbatim}
+
+test
+
+\end{verbatim}

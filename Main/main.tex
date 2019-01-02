@@ -1,5 +1,6 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
 \usepackage{graphicx}
 \graphicspath{ {images/} }
 \usepackage{float}
@@ -7,32 +8,94 @@
 \usepackage{amsfonts}
 \usepackage{amsmath}
 \usepackage{verbatimbox}
+\usepackage{titlepic}
+\usepackage{cite}
+\usepackage{url}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{titling}
+\usepackage{blindtext}
+\usepackage{imakeidx}
 
 
-\title{V2X - feature development}
-\author{Tedd Ahlberg,Erik Benjaminsson,Filip Kaiser \\Shahad Naji, Fressia Merino, David Olofsson}
-\date{November 2018}
-
+ 
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=black,      
+    urlcolor=black,
+}
+\urlstyle{same}
 
 \begin{document}
+\font\myfont=cmr12 at 32pt
+
+\begin{titlepage}
+
+\title{\vspace{7ex} { {\myfont V2X - feature development}} \vspace{50ex} }
+%\includegraphics[scale=0.4]{images/titlepange.png}
 
 
-\maketitle
-%om ni vill ha en ny sida är det bättre att skriva den i filen, men det är bättre att göra det sen
+\author{ Tedd Ahlberg, Erik Benjaminsson, Filip Kaiser \\ Fressia Merino,  Shahad Naji, David Olofsson}
+\date{January 2019}
+\end{titlepage}
+
+%titel page no numbering  
+\clearpage\maketitle
+\thispagestyle{empty}
+
+\cleardoublepage
+\setcounter{page}{2}
+\pagenumbering{Roman}			% Arabic numbering starting from 1 (one)
+\setlength{\parskip}{0pt plus 1pt}
+
+
 \input{Abstract.tex}
+\newpage
 
-
+% start index page 
 \tableofcontents
+
+
+\cleardoublepage
+\setcounter{page}{3}
+\pagenumbering{arabic}			% Arabic numbering starting from 1 (one)
+\setlength{\parskip}{0pt plus 1pt}
+
 
 
 \input{Introduction.tex}
 \input{Background.tex}
-
 \input{Theory.tex}
 \input{Method.tex}
 \input{Results.tex}
 \input{Discussion.tex}
 \input{Conclusion.tex}
+
+\newpage
+\input{References.tex}
+
+\newpage
 \input{appendix.tex}
 
 \end{document}
+
+
+%lite kommentarer
+%i conclusion börja kanske inte vad man inte kunde klara av, 
+%skriv typ, syftet var såhär och sen komma in på vad vi inte klarade av, även vad vi har klarat av. osv
+
+%visa mer i resultat i resultat, skriv vad man hade kunnat göra med datan
+%beskriv koden, referera till den i appendix, hur ser 
+
+%diskussion, vilka var limitations? skriv mer så att någon annan förstår
+
+%conclusion vilka papers? -kontrakt, dokumentation osv
+
+%resultat-hur går man vidare?
+
+Jens:
+
+hur går man vidare?
+
+hur tycker vi att det var att börja med projektet? hur har det känts?

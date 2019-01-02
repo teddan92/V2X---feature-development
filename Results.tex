@@ -1,4 +1,23 @@
-
 \section{Results}
 
-Coming in a few weeks (aiming for week 49/50)
+We were able to create a database scheme, included in the appendix, to hold the data in an easily filtered form. Additionally a parser that reads one log-file into a database following the scheme that has been written in Java. 
+The database schema and parser have been confirmed functional with the 4.7 MB log-file we received from Cybercom and an off-site database. The filtering and searching functions simplify the work with the data gathered in the log-file for a future development of the project. The intended future development would be a graphical program that visualises the data which would farther improve the understanding of what this data signifies. 
+
+Below we present a test string from the log-file which the script inserts into the database:
+
+\begin{verbatim}
+{ "itemId": "103636965585520737", "stationId": "1", "appId": "123",
+"typeId": "OSCAR_BLACKBOARD_TYPE_VEHICLE_STATUS", "location": { "latitude":
+52.5228688988356, "longitude": 13.410204655793073 }, "locationConfidence": 1, 
+"validityDuration": 1.5, "validityArea": "NaN", "blackboardProperties": [{"type": 
+"OSCAR_BLACKBOARD_PROPERTY_ACCELERATION", "acceleration": 0 }, {
+"type": "OSCAR_BLACKBOARD_PROPERTY_SPEED", "speed": 10 }, { "type": "OSCAR
+_BLACKBOARD_PROPERTY_YAW_RATE", "yawRate": 0 } ] }}
+
+\end{verbatim}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.1]{images/aa.png}
+    \caption{Screen-shot from database}
+\end{figure}
