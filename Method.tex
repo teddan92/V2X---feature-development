@@ -17,3 +17,14 @@ Before getting access to anything from the company all group members signed a st
 The group decided on a specific case scenario to solve and with the help of Scrum the case was broken down into smaller, more feasible tasks. 
 
 Our original method to test our V2X scenario was supposed to use the software supplied by Cybercom, but after some weeks we had to rethink our plans. The new strategy was to create a database with which to parse the information we acquired from the pseudo-log file with the purpose to map the locations of the two entities registered in the file and study the gathered data at each point. 
+
+\paragraph{}
+To achieve this a database schema was costructed capable of holding the data and a parser to read the log into the databas was written in java according to the following methodology.
+
+By mapping each value on the line with its ID as key in a hashmap the data for each column in the database is parsed as it is found. This handles all the top-level IDs but needs special adjustment for the "location" and "blackboardProperties" entries.
+
+By splitting the "location" entry into "longitude" and "latitude" in the line's hashmap it is handled with the rest.
+
+Storing "blackboardProperties" requires more adjustments, since there can be any number of entries per line. To manage this a separate database table holds the property entries. The number of the parent line is entered as the identifier for the parent line and the data in the line's hashmap is inserted into the database when reaching "blackboardProperties"; since it is the last  type, not stored with the rest and depends on the parent line existing in the database (as seen in the database schema). In "blackboardProperties" the data for "type" and value (ID varies) are inserted into a new hashmap with their IDs as keys. Each "blackboardProperties" entry is inserted into the database when fully read. It is entered with the line number of the parent as "parent", value of "type" as "type" and the value of the remaining key (key ignored) as "value".
+
+Thus, when reaching the end of the line all data has been parsed and inserted into the database.
